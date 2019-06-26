@@ -17,8 +17,11 @@
     <div class="col-sm-4">
 	</br>
 	</br>
-      <h3>Bazar List</h3>
-	  </br>
+		  <h3>Bazar List</h3>
+		  <form @submit.prevent="addItem">		  
+			  <input type="text" v-model="newItem">
+		  </form>
+		  </br>
 		  <ul class="list-group">
 		     <li v-for="item in items" class="list-group-item">
 			   {{item.name}}--{{item.price}}
@@ -36,8 +39,17 @@
 	     { name: 'rice', price: 12.50 },
 		 { name: 'wheat', price: 15.50 },
 		 { name: 'oil', price: 17.00 }
-	  ]
-	}
+	  ],
+	  newItem : ''
+	},
+	methods: {
+	  addItem(){
+	   this.items.push({
+	    name: this.newItem,
+		price: 0.00
+	   })
+	  }
+	},
 	})
 </script>
 
