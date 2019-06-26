@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Vue js Bazar List Simpl Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div id="app" class="container">
+  <div class="row">
+    <div class="col-sm-4">
+	</br>
+	</br>
+      <h3>Bazar List</h3>
+	  </br>
+		  <ul class="list-group">
+		     <li v-for="item in items" class="list-group-item">
+			   {{item.name}}--{{item.price}}
+			 </li>
+		  </ul>
+    </div>
+    
+  </div>
+</div>
+<script>
+	new Vue({
+	el: '#app',
+	data: {
+	  items : [
+	     { name: 'rice', price: 12.50 },
+		 { name: 'wheat', price: 15.50 },
+		 { name: 'oil', price: 17.00 }
+	  ]
+	}
+	})
+</script>
+
+</body>
+</html>
